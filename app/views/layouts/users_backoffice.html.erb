@@ -174,12 +174,14 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <%= image_tag "img.jpg", alt:"..." %>John Doe
+                      <%= image_tag "img.jpg", alt:"..." %> <%= current_user.email%>
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item"  href="login.html">
-                        <i class="fa fa-sign-out pull-right"></i> Log Out
-                      </a>
+                      
+                      <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do%>
+                        <i class="fa fa-sign-out pull-right"></i>  Sair
+                      <% end%>
+
                     </div>
                   </li>
   
